@@ -1,3 +1,4 @@
+ http://localhost/phpmyadmin/index.php?route=/sql&pos=0&db=tecinternet_escola_seunome&table=alunos 
 ### ETAPA 1
 
 ![modelagem-logica](images/modelagem-logica-etapa-1.png)
@@ -107,3 +108,10 @@ INSERT INTO `alunos` (`id`, `nome`, `data_nascimento`, `primeira_nota`, `segunda
 
 ### ETAPA 3
 
+## Consulta de alunos que nasceram antes de 2009
+
+```SQL
+SELECT alunos.nome as aluno, data_nascimento.alunos as aluno
+FROM  alunos INNER JOIN data_nascimento.alunos
+ON alunos.aluno_id = alunos.id;
+```
