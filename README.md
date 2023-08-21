@@ -1,2 +1,0 @@
-# exercicio-banco-de-dados
- 
