@@ -72,6 +72,8 @@ INSERT INTO `cursos` (`id`, `titulo`, `carga_horaria`, `professor_id`) VALUES
 (5, 'Redes de Computadores', 100, 1);
 ```
 
+![modelagem-logica](images/cursos.PNG)
+
 ## Adicionando os Professores
 
 ```SQL
@@ -82,6 +84,8 @@ INSERT INTO `professores` (`id`, `nome`, `area_atuacao`, `curso_id`) VALUES
 (4, 'Sócrates', 'desenvolvimento', 2),
 (5, 'Tomas', 'desenvolvimento', 1);
 ```
+
+![modelagem-logica](images/professores.PNG)
 
 ## Adicionando Alunos
 
@@ -97,4 +101,9 @@ INSERT INTO `alunos` (`id`, `nome`, `data_nascimento`, `primeira_nota`, `segunda
 (11, 'Miguel Pereira', '0000-00-00', 5.00, 6.00, 3),
 (12, 'Lucas Fernandes', '0000-00-00', 7.00, 6.00, 2),
 (13, 'Guilherme Ribeiro', '0000-00-00', 6.00, 5.00, 1);
+```
+
+![modelagem-logica](images/alunos.PNG)
+
+### ETAPA 3
 
