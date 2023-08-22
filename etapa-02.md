@@ -34,21 +34,21 @@ CREATE TABLE alunos(
 
 ## Chaves estrangeiras
 
-# Índices para tabela `alunos`
+### Índices para tabela `alunos`
 
 ALTER TABLE `alunos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_cursos_alunos` (`curso_id`);
 
 
-# Índices para tabela `cursos`
+### Índices para tabela `cursos`
 
 ALTER TABLE `cursos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_cursos_professores` (`professor_id`);
 
 
-# Índices para tabela `professores`
+### Índices para tabela `professores`
 
 ALTER TABLE `professores`
   ADD PRIMARY KEY (`id`);
