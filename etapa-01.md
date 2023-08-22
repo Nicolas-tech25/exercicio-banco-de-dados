@@ -1,0 +1,1 @@
+![modelagem-logica](images/modelagem-logica-etapa-1.png)
