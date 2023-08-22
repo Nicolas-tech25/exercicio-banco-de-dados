@@ -14,7 +14,7 @@
 ```SQL
 SELECT
     nome AS Nome,
-    CAST(((primeira_nota + segunda_nota) / 2) AS DEC(6, 2)) AS Média
+    CAST(((nota_um + nota_dois) / 2) AS DEC(6, 2)) AS Média
 FROM alunos;
 ```
 
@@ -92,7 +92,7 @@ ORDER BY Cursos DESC;
 ## 10 Consulta nome do aluno, suas notas, médias, do curso de Front e Back-end em ordem alfabética
 
 ```SQL
-SELECT alunos.nome AS Alunos, alunos.primeira_nota AS 'Primeira Nota', alunos.segunda_nota AS 'Segunda Nota', ROUND(AVG((alunos.primeira_nota + alunos.segunda_nota) / 2), 2) As 'Média dos Alunos',   cursos.titulo AS Cursos
+SELECT alunos.nome AS Alunos, alunos.nota_um AS 'Primeira Nota', alunos.nota_dois AS 'Segunda Nota', ROUND(AVG((alunos.nota_um + alunos.nota_dois) / 2), 2) As 'Média dos Alunos',   cursos.titulo AS Cursos
 FROM alunos INNER JOIN cursos
 ON alunos.curso_id = cursos.id
 WHERE cursos.titulo LIKE '%Front_End%' OR cursos.titulo LIKE '%Back_End%'

@@ -32,8 +32,8 @@ CREATE TABLE alunos(
     id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
     data_nascimento DATE NOT NULL,
-    primeira_nota DECIMAL(4,2),
-    segunda_nota DECIMAL(4,2),
+    nota_um DECIMAL(4,2),
+    nota_dois DECIMAL(4,2),
     curso_id TINYINT NOT NULL,
     CONSTRAINT fk_cursos FOREIGN KEY (curso_id)  REFERENCES cursos(id)
 );
@@ -91,7 +91,7 @@ INSERT INTO `professores` (`id`, `nome`, `area_atuacao`, `curso_id`) VALUES
 ## Adicionando Alunos
 
 ```SQL
-INSERT INTO `alunos` (`id`, `nome`, `data_nascimento`, `primeira_nota`, `segunda_nota`, `curso_id`) VALUES
+INSERT INTO `alunos` (`id`, `nome`, `data_nascimento`, `nota_um`, `nota_dois`, `curso_id`) VALUES
 (4, 'Maria Silva', '0000-00-00', 8.00, 9.00, 1),
 (5, 'Ana Santos', '0000-00-00', 7.00, 6.00, 2),
 (6, 'Sofia Rodrigues', '0000-00-00', 9.00, 10.00, 3),
@@ -122,7 +122,7 @@ INSERT INTO `alunos` (`id`, `nome`, `data_nascimento`, `primeira_nota`, `segunda
 ```SQL
 SELECT
     nome AS Nome,
-    CAST(((primeira_nota + segunda_nota) / 2) AS DEC(6, 2)) AS Média
+    CAST(((nota_um + nota_dois) / 2) AS DEC(6, 2)) AS Média
 FROM alunos;
 ```
 
@@ -200,7 +200,7 @@ ORDER BY Cursos DESC;
 ## 10 Consulta nome do aluno, suas notas, médias, do curso de Front e Back-end em ordem alfabética
 
 ```SQL
-SELECT alunos.nome AS Alunos, alunos.primeira_nota AS 'Primeira Nota', alunos.segunda_nota AS 'Segunda Nota', ROUND(AVG((alunos.primeira_nota + alunos.segunda_nota) / 2), 2) As 'Média dos Alunos',   cursos.titulo AS Cursos
+SELECT alunos.nome AS Alunos, alunos.nota_um AS 'Primeira Nota', alunos.nota_dois AS 'Segunda Nota', ROUND(AVG((alunos.nota_um + alunos.nota_dois) / 2), 2) As 'Média dos Alunos',   cursos.titulo AS Cursos
 FROM alunos INNER JOIN cursos
 ON alunos.curso_id = cursos.id
 WHERE cursos.titulo LIKE '%Front_End%' OR cursos.titulo LIKE '%Back_End%'
