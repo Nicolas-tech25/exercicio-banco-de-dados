@@ -49,7 +49,7 @@ SELECT
     alunos.nome,
     cursos.titulo, 
     cursos.carga_horaria
-    FROM alunos INNER JOIN cursos ON alunos.Cursos_id = cursos.id;
+    FROM alunos INNER JOIN curso ON alunos.Cursos_id = cursos.id;
 ```
 ![modelagem-logica](images/carga-horaria.PNG)
 
