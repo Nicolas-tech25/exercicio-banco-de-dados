@@ -113,7 +113,7 @@ AND id = (SELECT id FROM cursos WHERE id = 4);
 
 ```SQL
 DELETE FROM alunos
-WHERE id = 9 AND id= 6;
+WHERE id = 9 OR id= 6;
 ```
 ## 13 consulta que mostre a lista de alunos atualizada e o título dos cursos que fazem, classificados pelo nome do aluno.
 
