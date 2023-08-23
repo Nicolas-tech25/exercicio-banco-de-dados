@@ -48,7 +48,7 @@ FROM professores GROUP BY area_atuacao;
 SELECT 
     alunos.nome,
     cursos.titulo, 
-    cursos.CargaHoraria
+    cursos.carga_horaria
     FROM alunos INNER JOIN cursos ON alunos.Cursos_id = cursos.id;
 ```
 ![modelagem-logica](images/carga-horaria.PNG)
