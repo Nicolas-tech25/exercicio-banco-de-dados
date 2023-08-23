@@ -138,7 +138,7 @@ FROM cursos ORDER BY titulo ASC;
 ## 04 Consulta de professores da área de desenvolvimento
 
 ```SQL
- select nome, area_atuacao from professores where area_atuacao.quantidade = 'desenvolvimento';
+
 ```
 
 ![modelagem-logica](images/professores-desenvolvimento.PNG)

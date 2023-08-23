@@ -30,7 +30,7 @@ FROM cursos ORDER BY titulo ASC;
 ## 04 Consulta de professores da área de desenvolvimento
 
 ```SQL
- select nome, area_atuacao from professores where area_atuacao.quantidade = 'desenvolvimento';
+ select nome, area_atuacao from professores where area_atuacao = 'desenvolvimento';
 ```
 
 ![modelagem-logica](images/professores-desenvolvimento.PNG)
@@ -45,14 +45,13 @@ FROM professores GROUP BY area_atuacao;
 ## 06 consulta que mostre o nome dos alunos, o título e a carga horária dos cursos que fazem.
 
 ```SQL
-SELECT
-    alunos.nome as aluno,
-    ROUND(carga_horaria * 0.25) AS 'Limite de Faltas',
-    cursos.titulo as cursos
-    FROM alunos INNER JOIN cursos
-    ON alunos.curso_id = cursos.id;
+SELECT 
+    alunos.nome,
+    cursos.titulo, 
+    cursos.CargaHoraria
+    FROM alunos INNER JOIN cursos ON alunos.Cursos_id = cursos.id;
 ```
-![modelagem-logica](images/consulta-aluno-curso-faltas.PNG)
+![modelagem-logica](images/carga-horaria.PNG)
 
 ## 07 consulta que mostre o nome dos professores e o título do curso que lecionam. Classifique pelo nome do professor.
 
